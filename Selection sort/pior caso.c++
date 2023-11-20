@@ -1,0 +1,55 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+void selectionSort(int arr[], int n)
+{
+  for (int i = 0; i < n - 1; i++)
+  {
+    int max_index = i;
+    for (int j = i + 1; j < n; j++)
+    {
+      if (arr[j] > arr[max_index])
+      {
+        max_index = j;
+      }
+    }
+
+    // Troca o elemento máximo encontrado com o primeiro elemento não ordenado
+    int temp = arr[max_index];
+    arr[max_index] = arr[i];
+    arr[i] = temp;
+  }
+}
+
+int main()
+{
+  // Configuração da semente para geração de números aleatórios
+  std::srand(std::time(0));
+
+  // Número de amostras
+  const int num_samples = 1000;
+
+  // Array para armazenar as amostras
+  int samples[num_samples];
+
+  // Preencher o array em ordem decrescente (pior caso)
+  for (int i = 0; i < num_samples; i++)
+  {
+    samples[i] = num_samples - i;
+  }
+
+  // Tamanho do array
+  int n = sizeof(samples) / sizeof(samples[0]);
+
+  // Ordenar o array (pior caso)
+  selectionSort(samples, n);
+
+  // Imprimir o array ordenado
+  std::cout << "Worst Case - Selection Sorted array: ";
+  for (int i = 0; i < n; i++)
+    std::cout << samples[i] << " ";
+  std::cout << std::endl;
+
+  return 0;
+}
