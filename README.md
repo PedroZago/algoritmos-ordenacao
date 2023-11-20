@@ -1,6 +1,6 @@
 # Estudo Comparativo dos Algoritmos de Ordenação
 
-Engenharia de Computação 8° Semestre - Análise de Algoritmos
+Engenharia de Computação 6°/8° Semestre - Análise de Algoritmos
 ## Integrantes
 
 - Ana Flávia Alves Pereira – RA: 001202004440
